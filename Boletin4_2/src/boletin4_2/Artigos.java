@@ -6,34 +6,43 @@ import javax.swing.JOptionPane;
 public class Artigos {
     int prezo,unidades;
     
-public Artigos(int prezo, int unidades){
-    this.prezo=prezo;
-    this.unidades=unidades;
-}
-      public int prezoArtigo(){
-      int prezo;
-      return(Integer.parseInt(JOptionPane.showInputDialog("Prezo artigo: ")));
-    }
       public int unidadesArtigo(){
-      int unidades;
       return(Integer.parseInt(JOptionPane.showInputDialog("Nº unidades: ")));
+    }
+      
+       public int prezoArtigo(){
+      return(Integer.parseInt(JOptionPane.showInputDialog("Prezo unitario: ")));
     }
 
       public int cantidadePagar(){
-          return (prezo*unidades);
+          int prezoTotal;
+          return prezoTotal=(prezo*unidades);
       }
 
-      public void descontos(int unidades){
+      public void descontos(int unidades,int prezo){
           if(unidades<100){
-              
+          JOptionPane.showMessageDialog(null,"Non hay desconto");
+          JOptionPane.showMessageDialog(null,"Total a pagar: "+prezo);
           }
-          if(100<=unidades && unidades<200){
-              
+         
+          if(100<=unidades && unidades<200 && prezo>4000){
+            JOptionPane.showMessageDialog(null,"Desconto do 5%");
+            JOptionPane.showMessageDialog(null,"Total a pagar: "+(prezo-(prezo*0.05)));  
           }
-          if(unidades>=200){
-              
+          
+          else if(100<=unidades && unidades<200 && prezo<4000){
+          JOptionPane.showMessageDialog(null,"Desconto do 2%");
+          JOptionPane.showMessageDialog(null,"Total a pagar: "+(prezo-(prezo*0.02)));
+      }
+          if(unidades>=200 && prezo>4000){
+          JOptionPane.showMessageDialog(null,"Desconto do 10%");
+          JOptionPane.showMessageDialog(null,"Total a pagar: "+(prezo-(prezo*0.10)));
+          }
+          
+          else if(unidades>=200 && prezo<4000){
+          JOptionPane.showMessageDialog(null,"Desconto do 8%");
+          JOptionPane.showMessageDialog(null,"Total a pagar: "+(prezo-(prezo*0.08)));
           }
       }
       
 }
-      
