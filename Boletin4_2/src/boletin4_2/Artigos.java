@@ -17,7 +17,7 @@ public class Artigos {
       public int cantidadePagar(){
           int prezoTotal;
           return prezoTotal=(prezo*unidades);
-      }
+    }
 
       public void descontos(int unidades,int prezo){
           if(unidades<100){
@@ -33,7 +33,7 @@ public class Artigos {
           else if(100<=unidades && unidades<200 && prezo<4000){
           JOptionPane.showMessageDialog(null,"Desconto do 2%");
           JOptionPane.showMessageDialog(null,"Total a pagar: "+(prezo-(prezo*0.02)));
-      }
+          }  
           if(unidades>=200 && prezo>4000){
           JOptionPane.showMessageDialog(null,"Desconto do 10%");
           JOptionPane.showMessageDialog(null,"Total a pagar: "+(prezo-(prezo*0.10)));
